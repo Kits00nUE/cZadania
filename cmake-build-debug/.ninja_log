@@ -1,0 +1,23 @@
+# ninja log v5
+2	120	7307603381151189	CMakeFiles/ProjektwC.dir/main.cpp.obj	1e60839a3f660a49
+48	108	7307626310588651	ProjektwC.exe	4c21b8ef92a5837d
+0	87	7307628490693111	build.ninja	5e3d6ee5304be06d
+1	50	7307613470463495	CMakeFiles/ProjektwC.dir/Zadania_1/zad_1_2.c.obj	65a4b3d76eb08adf
+4	50	7307613470463495	CMakeFiles/ProjektwC.dir/Zadania_1/zad_1_1.c.obj	f08cce3fcf867c26
+2	51	7307609370216978	CMakeFiles/ProjektwC.dir/Zadania_1/main.cpp.obj	ef812b6b768e0d37
+1	48	7307626310008517	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+1	80	7307628490693111	build.ninja	5e3d6ee5304be06d
+2	47	7307633215865466	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+48	114	7307633216511983	ProjektwC.exe	4c21b8ef92a5837d
+1	57	7307639795578493	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+58	121	7307639796189078	ProjektwC.exe	4c21b8ef92a5837d
+2	49	7307639910075345	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+50	112	7307639910681926	ProjektwC.exe	4c21b8ef92a5837d
+1	60	7307656639021933	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+61	128	7307656639668180	ProjektwC.exe	4c21b8ef92a5837d
+2	57	7307657914986638	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+57	123	7307657915633444	ProjektwC.exe	4c21b8ef92a5837d
+2	58	7307658378593468	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+58	123	7307658379219772	ProjektwC.exe	4c21b8ef92a5837d
+2	55	7307659300385819	CMakeFiles/ProjektwC.dir/main.c.obj	7f3dfaff5fb08976
+55	125	7307659301064185	ProjektwC.exe	4c21b8ef92a5837d
