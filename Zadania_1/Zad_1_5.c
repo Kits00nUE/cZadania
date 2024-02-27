@@ -22,5 +22,6 @@ int main()
 
     }
     printf("suma: %i", suma);
+
     return 0;
 }
