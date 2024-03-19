@@ -1,3 +1,0 @@
-C:/Users/phant/CLionProjects/ProjektwC/cmake-build-debug/CMakeFiles/ProjektwC.dir
-C:/Users/phant/CLionProjects/ProjektwC/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/phant/CLionProjects/ProjektwC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
