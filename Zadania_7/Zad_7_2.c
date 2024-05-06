@@ -2,27 +2,28 @@
 #include <string.h>
 
 int main() {
-    FILE* file = fopen("C:\\Users\\phant\\CLionProjects\\ProjektwC\\Zadania_7\\input2.txt", "r");
+    FILE* file;
+    fopen_s(&file, "C:\\Users\\phant\\CLionProjects\\cZadania\\Zadania_7\\input2.txt", "r");
     char line[1024];
     int game_number = 1;
     int total_dice_power = 0;
 
     // First part: calculate total dice power
     while (fgets(line, sizeof(line), file)) {
-        char* saveptr1;
-        char* game = strtok_r(line, ":", &saveptr1);
-        char* round = strtok_r(NULL, ";", &saveptr1);
+        char* token1 = NULL;
+        char* game = strtok_s(line, ":", &token1);
+        char* round = strtok_s(NULL, ";", &token1);
         int max_red = 0, max_green = 0, max_blue = 0;
 
         while (round != NULL) {
-            char* saveptr2;
-            char* color = strtok_r(round, ",", &saveptr2);
+            char* token2 = NULL;
+            char* color = strtok_s(round, ",", &token2);
             int red = 0, green = 0, blue = 0;
 
             while (color != NULL) {
                 int quantity;
                 char color_name[20];
-                sscanf(color, "%d %s", &quantity, color_name);
+                sscanf_s(color, "%d %s", &quantity, color_name, sizeof(color_name));
 
                 if (strcmp(color_name, "red") == 0) {
                     red += quantity;
@@ -41,10 +42,10 @@ int main() {
                     }
                 }
 
-                color = strtok_r(NULL, ",", &saveptr2);
+                color = strtok_s(NULL, ",", &token2);
             }
 
-            round = strtok_r(NULL, ";", &saveptr1);
+            round = strtok_s(NULL, ";", &token1);
         }
 
         int game_dice_power = max_red * max_green * max_blue;
@@ -61,20 +62,20 @@ int main() {
 
     // Second part: calculate sum of possible games
     while (fgets(line, sizeof(line), file)) {
-        char* saveptr1;
-        char* game = strtok_r(line, ":", &saveptr1);
-        char* round = strtok_r(NULL, ";", &saveptr1);
+        char* token1 = NULL;
+        char* game = strtok_s(line, ":", &token1);
+        char* round = strtok_s(NULL, ";", &token1);
         int is_possible = 1;
 
         while (round != NULL && is_possible) {
-            char* saveptr2;
-            char* color = strtok_r(round, ",", &saveptr2);
+            char* token2 = NULL;
+            char* color = strtok_s(round, ",", &token2);
             int red = 0, green = 0, blue = 0;
 
             while (color != NULL) {
                 int quantity;
                 char color_name[20];
-                sscanf(color, "%d %s", &quantity, color_name);
+                sscanf_s(color, "%d %s", &quantity, color_name, sizeof(color_name));
 
                 if (strcmp(color_name, "red") == 0) {
                     red += quantity;
@@ -89,10 +90,10 @@ int main() {
                     break;
                 }
 
-                color = strtok_r(NULL, ",", &saveptr2);
+                color = strtok_s(NULL, ",", &token2);
             }
 
-            round = strtok_r(NULL, ";", &saveptr1);
+            round = strtok_s(NULL, ";", &token1);
         }
 
         if (is_possible) {
