@@ -9,17 +9,24 @@ int main() {
 
     // First part: calculate total dice power
     while (fgets(line, sizeof(line), file)) {
-        char* saveptr1;
-        char* game = strtok_r(line, ":", &saveptr1);
-        char* round = strtok_r(NULL, ";", &saveptr1);
+        char* game = line;
+        char* colon = strchr(game, ':');
+        if (colon) *colon = '\0';
+
+        char* round = colon + 1;
         int max_red = 0, max_green = 0, max_blue = 0;
 
-        while (round != NULL) {
-            char* saveptr2;
-            char* color = strtok_r(round, ",", &saveptr2);
+        while (round) {
+            char* semicolon = strchr(round, ';');
+            if (semicolon) *semicolon = '\0';
+
+            char* color = round;
             int red = 0, green = 0, blue = 0;
 
-            while (color != NULL) {
+            while (color) {
+                char* comma = strchr(color, ',');
+                if (comma) *comma = '\0';
+
                 int quantity;
                 char color_name[20];
                 sscanf(color, "%d %s", &quantity, color_name);
@@ -41,10 +48,10 @@ int main() {
                     }
                 }
 
-                color = strtok_r(NULL, ",", &saveptr2);
+                color = comma ? comma + 1 : NULL;
             }
 
-            round = strtok_r(NULL, ";", &saveptr1);
+            round = semicolon ? semicolon + 1 : NULL;
         }
 
         int game_dice_power = max_red * max_green * max_blue;
@@ -61,17 +68,24 @@ int main() {
 
     // Second part: calculate sum of possible games
     while (fgets(line, sizeof(line), file)) {
-        char* saveptr1;
-        char* game = strtok_r(line, ":", &saveptr1);
-        char* round = strtok_r(NULL, ";", &saveptr1);
+        char* game = line;
+        char* colon = strchr(game, ':');
+        if (colon) *colon = '\0';
+
+        char* round = colon + 1;
         int is_possible = 1;
 
-        while (round != NULL && is_possible) {
-            char* saveptr2;
-            char* color = strtok_r(round, ",", &saveptr2);
+        while (round && is_possible) {
+            char* semicolon = strchr(round, ';');
+            if (semicolon) *semicolon = '\0';
+
+            char* color = round;
             int red = 0, green = 0, blue = 0;
 
-            while (color != NULL) {
+            while (color) {
+                char* comma = strchr(color, ',');
+                if (comma) *comma = '\0';
+
                 int quantity;
                 char color_name[20];
                 sscanf(color, "%d %s", &quantity, color_name);
@@ -89,10 +103,10 @@ int main() {
                     break;
                 }
 
-                color = strtok_r(NULL, ",", &saveptr2);
+                color = comma ? comma + 1 : NULL;
             }
 
-            round = strtok_r(NULL, ";", &saveptr1);
+            round = semicolon ? semicolon + 1 : NULL;
         }
 
         if (is_possible) {
